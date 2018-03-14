@@ -12,6 +12,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import com.tomandryan.fortnite.R;
+import com.tomandryan.fortnite.listener.WeaponTypeListener;
+import com.tomandryan.fortnite.model.Weapons;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,12 +25,6 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.weaponRarityB) Spinner weaponRarityB;
     @BindView(R.id.weaponSelectionA) TextView weaponSelectionA;
 
-    final static List<String> ALL_WEAPON_TYPES = Arrays.asList("Assault Rifle", "Scoped Assault Rifle", "Burst Assault Rifle", "Suppressed Submachine Gun", "Tactical Submachine Gun",
-            "Minigun", "Hand Cannon", "Pistol", "Revolver", "Suppressed Pistol", "Bolt-Action Sniper Rifle", "Hunting Rifle", "Semi-Auto Sniper Rifle",
-            "Pump Action Shotgun", "Tactical Shotgun", "Grenade Launcher", "Rocket Launcher", "Crossbow");
-
-    final static List<String> ALL_WEAPON_RARITIES = Arrays.asList("Grey (Uncommon)", "Green (Uncommon)", "Blue (Rare)", "Purple (Epic)", "Gold (Legendary)");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,26 +32,15 @@ public class WeaponComparisonActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, ALL_WEAPON_TYPES);
+        ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_TYPES);
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
 
-        ArrayAdapter<String> weaponRarityAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, ALL_WEAPON_RARITIES);
+        ArrayAdapter<String> weaponRarityAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_RARITIES);
         weaponRarityA.setAdapter(weaponRarityAdapter);
         weaponRarityB.setAdapter(weaponRarityAdapter);
 
-        weaponTypeA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                weaponSelectionA.setText(ALL_WEAPON_TYPES.get(i));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                /* look into putting a default text on nothing selected */
-            }
-        });
-
+        weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(weaponSelectionA));
     }
 
 
