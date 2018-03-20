@@ -8,9 +8,22 @@ import java.util.List;
  */
 
 public class Weapons {
-    public final static List<String> ALL_WEAPON_TYPES = Arrays.asList("Assault Rifle", "Scoped Assault Rifle", "Burst Assault Rifle", "Suppressed Submachine Gun", "Tactical Submachine Gun",
-            "Minigun", "Hand Cannon", "Pistol", "Revolver", "Suppressed Pistol", "Bolt-Action Sniper Rifle", "Hunting Rifle", "Semi-Auto Sniper Rifle",
+    public final static List<String> ALL_WEAPON_TYPES = Arrays.asList("Assault Rifle (Grey)", "Scoped Assault Rifle", "Burst Assault Rifle", "Suppressed Submachine Gun", "Tactical Submachine Gun",
+            "Minigun", "Hand Cannon", "Pistol (Grey)", "Revolver", "Suppressed Pistol", "Bolt-Action Sniper Rifle", "Hunting Rifle", "Semi-Auto Sniper Rifle",
             "Pump Action Shotgun", "Tactical Shotgun", "Grenade Launcher", "Rocket Launcher", "Crossbow");
 
-    public final static List<String> ALL_WEAPON_RARITIES = Arrays.asList("Grey (Uncommon)", "Green (Uncommon)", "Blue (Rare)", "Purple (Epic)", "Gold (Legendary)");
+    public static Weapon getWeaponStats(String weaponName) {
+        switch(weaponName){
+            case "Assault Rifle (Grey)":
+                return new Weapon("Assault Rifle (Grey)",165,30,5.5,30,2.3,"Grey", "Medium");
+            case "Pistol (Grey)":
+                return new Weapon("Pistol (Grey)",155.25,23,6.75,16,1.5, "Grey", "Light");
+            case "Tactical Shotgun (Green)":
+                return new Weapon("Tactical Shotgun (Green)",100.5,67,1.5,8,6.3,"Green","Shells n Slugs");
+        }
+        return null;
+    }
+
 }
+
+
