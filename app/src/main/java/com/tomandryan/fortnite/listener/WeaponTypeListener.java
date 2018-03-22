@@ -21,13 +21,15 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
     private TextView currentWeaponRarity;
     private TextView currentWeaponBulletType;
 
-    public WeaponTypeListener(TextView currentWeaponDPS,
-                              TextView currentWeaponDamage,
-                              TextView currentWeaponFireRate,
-                              TextView currentWeaponMagazineSize,
-                              TextView currentWeaponReloadTime,
-                              TextView currentWeaponRarity,
-                              TextView currentWeaponBulletType){
+    public WeaponTypeListener(
+            TextView currentWeaponDPS,
+            TextView currentWeaponDamage,
+            TextView currentWeaponFireRate,
+            TextView currentWeaponMagazineSize,
+            TextView currentWeaponReloadTime,
+            TextView currentWeaponRarity,
+            TextView currentWeaponBulletType
+    ){
         this.currentWeaponDPS = currentWeaponDPS;
         this.currentWeaponDamage = currentWeaponDamage;
         this.currentWeaponFireRate = currentWeaponFireRate;
@@ -39,8 +41,7 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String selection = Weapons.ALL_WEAPON_TYPES.get(i);
-        Weapon stats = Weapons.getWeaponStats(selection);
+        Weapon stats = Weapons.getWeaponStats(i);
         this.setWeaponStats(stats);
     }
 
