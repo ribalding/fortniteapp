@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by ryanh on 3/13/2018.
+ * Created by ryanh and tom on 3/13/2018.
  */
 
 public class Weapons {
@@ -17,6 +17,7 @@ public class Weapons {
             "Revolver (Grey)", "Revolver (Green)", "Revolver (Blue)", "Rocket Launcher (Blue)", "Rocket Launcher (Purple)", "Rocket Launcher (Gold)",
             "Pump Shotgun (Grey)", "Pump Shotgun (Green)", "Tactical Shotgun (Blue)", "Tactical Shotgun (Purple)", "Tactical Shotgun (Green)",
             "Suppressed Submachine Gun (Grey)", "Suppressed Submachine Gun (Green)", "Suppressed Submachine Gun (Blue)", "Tactical Submachine Gun (Green)", "Tactical Submachine Gun (Blue)", "Tactical Submachine Gun (Purple");
+
 
     public static Weapon getWeaponStats(String weaponName) {
         switch(weaponName){
