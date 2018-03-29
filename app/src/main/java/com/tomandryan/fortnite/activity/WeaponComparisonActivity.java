@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ListView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -12,6 +13,9 @@ import butterknife.ButterKnife;
 import com.tomandryan.fortnite.R;
 import com.tomandryan.fortnite.listener.WeaponTypeListener;
 import com.tomandryan.fortnite.model.Weapons;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.weaponTypeA) Spinner weaponTypeA;
@@ -24,6 +28,13 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.currentWeaponReloadTime) TextView currentWeaponReloadTime;
     @BindView(R.id.currentWeaponRarity) TextView currentWeaponRarity;
     @BindView(R.id.currentWeaponBulletType) TextView currentWeaponBulletType;
+    @BindView(R.id.potentialWeaponDPS) TextView potentialWeaponDPS;
+    @BindView(R.id.potentialWeaponDamage) TextView potentialWeaponDamage;
+    @BindView(R.id.potentialWeaponFireRate) TextView potentialWeaponFireRate;
+    @BindView(R.id.potentialWeaponMagazineSize) TextView potentialWeaponMagazineSize;
+    @BindView(R.id.potentialWeaponReloadTime) TextView potentialWeaponReloadTime;
+    @BindView(R.id.potentialWeaponRarity) TextView potentialWeaponRarity;
+    @BindView(R.id.potentialWeaponBulletType) TextView potentialWeaponBulletType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +47,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
 
+
         weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
                 currentWeaponDPS,
                 currentWeaponDamage,
@@ -43,8 +55,18 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                 currentWeaponMagazineSize,
                 currentWeaponReloadTime,
                 currentWeaponRarity,
-                currentWeaponBulletType));
-    }
+                currentWeaponBulletType)
+                );
 
+        weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
+                        potentialWeaponDPS,
+                        potentialWeaponDamage,
+                        potentialWeaponFireRate,
+                        potentialWeaponMagazineSize,
+                        potentialWeaponReloadTime,
+                        potentialWeaponRarity,
+                        potentialWeaponBulletType)
+        );
+    }
 
 }

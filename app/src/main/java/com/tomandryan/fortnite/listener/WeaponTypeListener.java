@@ -2,11 +2,12 @@ package com.tomandryan.fortnite.listener;
 
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.tomandryan.fortnite.activity.WeaponComparisonActivity_ViewBinding;
 import com.tomandryan.fortnite.model.Weapon;
 import com.tomandryan.fortnite.model.Weapons;
+
 
 /**
  * Created by ryanh on 3/13/2018.
@@ -27,7 +28,8 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
                               TextView currentWeaponMagazineSize,
                               TextView currentWeaponReloadTime,
                               TextView currentWeaponRarity,
-                              TextView currentWeaponBulletType){
+                              TextView currentWeaponBulletType
+                              ){
         this.currentWeaponDPS = currentWeaponDPS;
         this.currentWeaponDamage = currentWeaponDamage;
         this.currentWeaponFireRate = currentWeaponFireRate;
@@ -50,7 +52,14 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
 
     private void setWeaponStats (Weapon w) {
         this.currentWeaponDPS.setText(Double.toString(w.getDps()));
-        /* do this line above for each property */
+        /* do we need to send over weapon name as well? */
+        this.currentWeaponDamage.setText(Integer.toString(w.getDamage()));
+        this.currentWeaponFireRate.setText(Double.toString(w.getFireRate()));
+        this.currentWeaponMagazineSize.setText(Integer.toString(w.getMagazineSize()));
+        this.currentWeaponReloadTime.setText(Double.toString(w.getReloadTime()));
+        this.currentWeaponRarity.setText(w.getRarity());
+        this.currentWeaponBulletType.setText(w.getBulletType());
+
     }
 
 }
