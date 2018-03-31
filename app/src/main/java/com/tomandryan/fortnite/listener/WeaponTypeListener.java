@@ -1,5 +1,6 @@
 package com.tomandryan.fortnite.listener;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -41,14 +42,14 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String selection = Weapons.ALL_WEAPON_TYPES.get(i);
-        Weapon stats = Weapons.getWeaponStats(selection);
+        Weapon stats = Weapons.getWeaponStats(i);
         this.setWeaponStats(stats);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
+
 
     private void setWeaponStats (Weapon w) {
         this.currentWeaponDPS.setText(Double.toString(w.getDps()));

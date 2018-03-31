@@ -1,5 +1,7 @@
 package com.tomandryan.fortnite;
 
+import com.tomandryan.fortnite.model.Weapons;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,4 +16,11 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void compareWeaponStatsTest(){
+        int comparisonResultTest = Weapons.compareWeaponStats(90.00, 120.00);
+            assertEquals(33, comparisonResultTest);
+    }
 }
+
