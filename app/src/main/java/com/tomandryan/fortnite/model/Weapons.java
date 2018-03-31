@@ -70,6 +70,21 @@ public class Weapons {
         return ALL_WEAPONS.get(index);
     }
 
+
+    public static int compareWeaponStats (Double currentWeaponStat, Double potentialWeaponStat) {
+        // find the difference between currentWeaponStat and potentialWeaponStat
+        Double differenceBetweenStats = currentWeaponStat - potentialWeaponStat;
+        // divide the difference by the original number and multiply by 100. Negatives are decreases.
+        Double differenceDividedBetweenStats = (currentWeaponStat / differenceBetweenStats) * 100;
+        long roundedDifferenceBetweenStats = Math.round(differenceDividedBetweenStats);
+        return (int) roundedDifferenceBetweenStats;
+    }
+
+
+
 }
+
+
+
 
 
