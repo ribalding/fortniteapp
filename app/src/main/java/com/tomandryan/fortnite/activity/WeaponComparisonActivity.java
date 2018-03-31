@@ -14,6 +14,7 @@ import com.tomandryan.fortnite.R;
 import com.tomandryan.fortnite.listener.WeaponTypeListener;
 import com.tomandryan.fortnite.model.Weapons;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,6 +36,8 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialWeaponReloadTime) TextView potentialWeaponReloadTime;
     @BindView(R.id.potentialWeaponRarity) TextView potentialWeaponRarity;
     @BindView(R.id.potentialWeaponBulletType) TextView potentialWeaponBulletType;
+    @BindView(R.id.weaponAttributeList) ListView weaponAttributeList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,30 +46,43 @@ public class WeaponComparisonActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+
+
+
+
+//        weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
+//                currentWeaponDPS,
+//                currentWeaponDamage,
+//                currentWeaponFireRate,
+//                currentWeaponMagazineSize,
+//                currentWeaponReloadTime,
+//                currentWeaponRarity,
+//                currentWeaponBulletType)
+//                );
+//
+//        weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
+//                        potentialWeaponDPS,
+//                        potentialWeaponDamage,
+//                        potentialWeaponFireRate,
+//                        potentialWeaponMagazineSize,
+//                        potentialWeaponReloadTime,
+//                        potentialWeaponRarity,
+//                        potentialWeaponBulletType)
+//        );
+    }
+
+    private void setupStatsDisplay(){
+
+        List<String> stats = Weapons.ALL_WEAPON_TYPES;
+        WeaponTypeListener weaponTypeListener = new WeaponTypeListener(stats);
         ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_TYPES);
+        ArrayAdapter<String> otherAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, stats);
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
 
+        weaponTypeA.setOnItemSelectedListener(weaponTypeListener);
 
-        weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
-                currentWeaponDPS,
-                currentWeaponDamage,
-                currentWeaponFireRate,
-                currentWeaponMagazineSize,
-                currentWeaponReloadTime,
-                currentWeaponRarity,
-                currentWeaponBulletType)
-                );
-
-        weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
-                        potentialWeaponDPS,
-                        potentialWeaponDamage,
-                        potentialWeaponFireRate,
-                        potentialWeaponMagazineSize,
-                        potentialWeaponReloadTime,
-                        potentialWeaponRarity,
-                        potentialWeaponBulletType)
-        );
+        weaponAttributeList.setAdapter(otherAdapter);
     }
 
 }
