@@ -35,6 +35,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialWeaponReloadTime) TextView potentialWeaponReloadTime;
     @BindView(R.id.potentialWeaponRarity) TextView potentialWeaponRarity;
     @BindView(R.id.potentialWeaponBulletType) TextView potentialWeaponBulletType;
+    @BindView(R.id.compareDPS) TextView compareDPS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,6 @@ public class WeaponComparisonActivity extends AppCompatActivity {
         ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_TYPES);
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
-
 
         weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
                 currentWeaponDPS,
@@ -69,4 +69,8 @@ public class WeaponComparisonActivity extends AppCompatActivity {
         );
     }
 
+    public void updateComparison(int dpsComparison){
+        compareDPS.setText(dpsComparison);
+
+    }
 }
