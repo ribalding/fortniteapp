@@ -37,7 +37,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialWeaponRarity) TextView potentialWeaponRarity;
     @BindView(R.id.potentialWeaponBulletType) TextView potentialWeaponBulletType;
     @BindView(R.id.weaponAttributeList) ListView weaponAttributeList;
-
+    @BindView(R.id.compareDPS) TextView compareDPS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,4 +77,8 @@ public class WeaponComparisonActivity extends AppCompatActivity {
 
     }
 
+    public void updateComparison(int dpsComparison){
+        compareDPS.setText(dpsComparison);
+
+    }
 }

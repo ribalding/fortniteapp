@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.tomandryan.fortnite.activity.WeaponComparisonActivity;
 import com.tomandryan.fortnite.model.Weapon;
 import com.tomandryan.fortnite.model.Weapons;
 

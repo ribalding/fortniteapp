@@ -247,6 +247,25 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponRarity"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/compareDPS"
+        android:layout_width="73dp"
+        android:layout_height="23dp"
+        android:text="dps comp"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <TextView
+        android:id="@+id/compareWeaponDamage"
+        android:layout_width="64dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="20dp"
+        android:text="damage comp"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compareDPS" />
 
 </android.support.constraint.ConstraintLayout>
