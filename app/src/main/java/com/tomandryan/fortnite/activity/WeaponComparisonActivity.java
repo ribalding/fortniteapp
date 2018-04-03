@@ -45,44 +45,36 @@ public class WeaponComparisonActivity extends AppCompatActivity {
         setContentView(R.layout.weapon_comparison_activity);
 
         ButterKnife.bind(this);
-
-
-
-
-
-//        weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
-//                currentWeaponDPS,
-//                currentWeaponDamage,
-//                currentWeaponFireRate,
-//                currentWeaponMagazineSize,
-//                currentWeaponReloadTime,
-//                currentWeaponRarity,
-//                currentWeaponBulletType)
-//                );
-//
-//        weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
-//                        potentialWeaponDPS,
-//                        potentialWeaponDamage,
-//                        potentialWeaponFireRate,
-//                        potentialWeaponMagazineSize,
-//                        potentialWeaponReloadTime,
-//                        potentialWeaponRarity,
-//                        potentialWeaponBulletType)
-//        );
+        setupStatsDisplay();
     }
 
     private void setupStatsDisplay(){
-
-        List<String> stats = Weapons.ALL_WEAPON_TYPES;
-        WeaponTypeListener weaponTypeListener = new WeaponTypeListener(stats);
+        // Create adapter to display weapon types in weapon type spinners
         ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_TYPES);
-        ArrayAdapter<String> otherAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, stats);
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
 
-        weaponTypeA.setOnItemSelectedListener(weaponTypeListener);
+        // Set Weapon Type Listener on spinners to update stat displays on weapon selection
+        weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
+                currentWeaponDPS,
+                currentWeaponDamage,
+                currentWeaponFireRate,
+                currentWeaponMagazineSize,
+                currentWeaponReloadTime,
+                currentWeaponRarity,
+                currentWeaponBulletType)
+                );
 
-        weaponAttributeList.setAdapter(otherAdapter);
+        weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
+                        potentialWeaponDPS,
+                        potentialWeaponDamage,
+                        potentialWeaponFireRate,
+                        potentialWeaponMagazineSize,
+                        potentialWeaponReloadTime,
+                        potentialWeaponRarity,
+                        potentialWeaponBulletType)
+        );
+
     }
 
 }

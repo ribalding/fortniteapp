@@ -14,6 +14,9 @@ import java.util.List;
 
 
 /**
+ * Item Selected Listener implementation for setting text of supplied text views with
+ * given weapon's stats when that weapon is selected.
+ *
  * Created by ryanh on 3/13/2018.
  */
 
@@ -25,7 +28,6 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
     private TextView currentWeaponReloadTime;
     private TextView currentWeaponRarity;
     private TextView currentWeaponBulletType;
-    private List<String> attributeList;
 
     public WeaponTypeListener(TextView currentWeaponDPS,
                               TextView currentWeaponDamage,
@@ -44,18 +46,9 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
         this.currentWeaponBulletType = currentWeaponBulletType;
     }
 
-    public WeaponTypeListener(List<String> attributeList){
-        this.attributeList = attributeList;
-    }
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         Weapon stats = Weapons.getWeaponStats(i);
-        if(this.attributeList != null){
-            this.setWeaponStats2(stats);
-        } else {
-            this.setWeaponStats(stats);
-        }
         this.setWeaponStats(stats);
     }
 
@@ -74,11 +67,6 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
         this.currentWeaponRarity.setText(w.getRarity());
         this.currentWeaponBulletType.setText(w.getBulletType());
     }
-
-    private void setWeaponStats2(Weapon w){
-        this.attributeList.set(0, Double.toString(w.getDps()));
-    }
-
 }
 
 

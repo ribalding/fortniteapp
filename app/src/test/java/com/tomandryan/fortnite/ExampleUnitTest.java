@@ -12,6 +12,11 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+
+    public ExampleUnitTest(){
+
+    }
+
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
@@ -20,7 +25,7 @@ public class ExampleUnitTest {
     @Test
     public void compareWeaponStatsTest(){
         int comparisonResultTest = Weapons.compareWeaponStats(90.00, 120.00);
-            assertEquals(33, comparisonResultTest);
+        assertEquals("compareWeaponStats method correctly returns the percentage difference between two numbers",33, comparisonResultTest);
     }
 }
 

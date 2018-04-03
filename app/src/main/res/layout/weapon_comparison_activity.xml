@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.tomandryan.fortnite.activity.WeaponComparisonActivity">
 
+    <TextView
+        android:id="@+id/weaponSelectionA2"
+        android:layout_width="102dp"
+        android:layout_height="38dp"
+        android:text="Current Weapon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weaponTypeA"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Spinner
         android:id="@+id/weaponTypeA"
         android:layout_width="185dp"
@@ -54,11 +66,11 @@
         android:layout_height="38dp"
         android:text="Current Weapon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weaponTypeA"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <TextView
@@ -67,19 +79,18 @@
         android:layout_height="28dp"
         android:text="dps"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weaponSelectionA"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/currentWeaponDamage"
         android:layout_width="99dp"
         android:layout_height="28dp"
-        android:layout_marginTop="12dp"
         android:text="damage"
-        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeaponDPS" />
@@ -90,11 +101,11 @@
         android:layout_height="26dp"
         android:text="fire rate"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeaponDamage"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/currentWeaponMagazineSize"
@@ -102,11 +113,11 @@
         android:layout_height="21dp"
         android:text="magazine size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeaponFireRate"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/currentWeaponReloadTime"
@@ -114,11 +125,11 @@
         android:layout_height="24dp"
         android:text="reload time"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeaponMagazineSize"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/currentWeaponRarity"
@@ -126,11 +137,11 @@
         android:layout_height="30dp"
         android:text="weapon rarity"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeaponReloadTime"
-        app:layout_constraintVertical_bias="0.229" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/currentWeaponBulletType"
@@ -138,11 +149,11 @@
         android:layout_height="19dp"
         android:text="bullet type"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeaponRarity"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
         android:id="@+id/weaponSelectionB"
@@ -150,11 +161,11 @@
         android:layout_height="38dp"
         android:text="Potential Weapon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weaponTypeB"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/potentialWeaponDPS"
@@ -162,19 +173,18 @@
         android:layout_height="28dp"
         android:text="dps"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weaponSelectionB"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/potentialWeaponDamage"
         android:layout_width="99dp"
         android:layout_height="28dp"
-        android:layout_marginTop="12dp"
         android:text="damage"
-        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponDPS" />
@@ -185,11 +195,11 @@
         android:layout_height="26dp"
         android:text="fire rate"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.678"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponDamage"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/potentialWeaponMagazineSize"
@@ -197,11 +207,11 @@
         android:layout_height="21dp"
         android:text="magazine size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponFireRate"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/potentialWeaponReloadTime"
@@ -209,11 +219,11 @@
         android:layout_height="24dp"
         android:text="reload time"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponMagazineSize"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/potentialWeaponRarity"
@@ -221,11 +231,11 @@
         android:layout_height="30dp"
         android:text="weapon rarity"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.691"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponReloadTime"
-        app:layout_constraintVertical_bias="0.229" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/potentialWeaponBulletType"
@@ -233,17 +243,10 @@
         android:layout_height="19dp"
         android:text="bullet type"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potentialWeaponRarity"
-        app:layout_constraintVertical_bias="0.2" />
-
-    <ListView
-        android:id="@+id/weaponAttributeList"
-        android:layout_width="141dp"
-        android:layout_height="295dp"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintVertical_bias="0.058" />
 
 </android.support.constraint.ConstraintLayout>
