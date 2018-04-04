@@ -14,6 +14,7 @@ import com.tomandryan.fortnite.R;
 import com.tomandryan.fortnite.listener.WeaponTypeListener;
 import com.tomandryan.fortnite.model.Weapons;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -43,11 +44,16 @@ public class WeaponComparisonActivity extends AppCompatActivity {
         setContentView(R.layout.weapon_comparison_activity);
 
         ButterKnife.bind(this);
+        setupStatsDisplay();
+    }
 
+    private void setupStatsDisplay(){
+        // Create adapter to display weapon types in weapon type spinners
         ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_TYPES);
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
 
+        // Set Weapon Type Listener on spinners to update stat displays on weapon selection
         weaponTypeA.setOnItemSelectedListener(new WeaponTypeListener(
                 currentWeaponDPS,
                 currentWeaponDamage,
@@ -55,7 +61,10 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                 currentWeaponMagazineSize,
                 currentWeaponReloadTime,
                 currentWeaponRarity,
-                currentWeaponBulletType)
+                currentWeaponBulletType,
+                        weaponTypeA,
+                        weaponTypeB,
+                        compareDPS)
                 );
 
         weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
@@ -65,12 +74,13 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                         potentialWeaponMagazineSize,
                         potentialWeaponReloadTime,
                         potentialWeaponRarity,
-                        potentialWeaponBulletType)
+                        potentialWeaponBulletType,
+                        weaponTypeA,
+                        weaponTypeB,
+                        compareDPS)
         );
-    }
-
-    public void updateComparison(int dpsComparison){
-        compareDPS.setText(dpsComparison);
 
     }
+
+
 }

@@ -6,20 +6,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class CompareWeaponStatsTest {
+
+    public CompareWeaponStatsTest(){
+    }
 
     @Test
     public void compareWeaponStatsTest(){
         int comparisonResultTest = Weapons.compareWeaponStats(90.00, 120.00);
-            assertEquals(33, comparisonResultTest);
-    }
-
-    public CompareWeaponStatsTest(){
+        assertEquals("compareWeaponStats method correctly returns the percentage difference between two numbers",33, comparisonResultTest);
     }
 }
 
