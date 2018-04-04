@@ -36,7 +36,6 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialWeaponReloadTime) TextView potentialWeaponReloadTime;
     @BindView(R.id.potentialWeaponRarity) TextView potentialWeaponRarity;
     @BindView(R.id.potentialWeaponBulletType) TextView potentialWeaponBulletType;
-    @BindView(R.id.weaponAttributeList) ListView weaponAttributeList;
     @BindView(R.id.compareDPS) TextView compareDPS;
 
     @Override
@@ -62,7 +61,10 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                 currentWeaponMagazineSize,
                 currentWeaponReloadTime,
                 currentWeaponRarity,
-                currentWeaponBulletType)
+                currentWeaponBulletType,
+                        weaponTypeA,
+                        weaponTypeB,
+                        compareDPS)
                 );
 
         weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
@@ -72,13 +74,13 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                         potentialWeaponMagazineSize,
                         potentialWeaponReloadTime,
                         potentialWeaponRarity,
-                        potentialWeaponBulletType)
+                        potentialWeaponBulletType,
+                        weaponTypeA,
+                        weaponTypeB,
+                        compareDPS)
         );
 
     }
 
-    public void updateComparison(int dpsComparison){
-        compareDPS.setText(dpsComparison);
 
-    }
 }

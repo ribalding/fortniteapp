@@ -1,13 +1,21 @@
 package com.tomandryan.fortnite.model;
 
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.tomandryan.fortnite.R;
+
 import java.util.Arrays;
 import java.util.List;
+
+import butterknife.BindView;
 
 /**
  * Created by ryanh and tom on 3/13/2018.
  */
 
 public class Weapons {
+
     public final static List<String> ALL_WEAPON_TYPES = Arrays.asList("Assault Rifle (Grey)", "Assault Rifle (Green)", "Assault Rifle (Blue)", "Assault Rifle (Purple)", "Assault Rifle (Gold)",
             "Burst Assault Rifle (Grey)", "Burst Assault Rifle (Green)", "Burst Assault Rifle (Blue)", "Scoped Assault Rifle (Blue)", "Scoped Assault Rifle (Purple)",
             "Bolt Action Sniper Rifle (Blue)", "Bolt Action Sniper Rifle (Purple)", "Bolt Action Sniper Rifle (Gold)", "Crossbow (Blue)", "Crossbow (Purple)",
@@ -80,6 +88,7 @@ public class Weapons {
         long roundedDifferenceBetweenStats = Math.round(differenceDividedBetweenStats);
         return (int) roundedDifferenceBetweenStats;
     }
+
 
 
 
