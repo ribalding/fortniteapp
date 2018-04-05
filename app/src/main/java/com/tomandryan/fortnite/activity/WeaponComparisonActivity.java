@@ -37,6 +37,10 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialWeaponRarity) TextView potentialWeaponRarity;
     @BindView(R.id.potentialWeaponBulletType) TextView potentialWeaponBulletType;
     @BindView(R.id.compareDPS) TextView compareDPS;
+    @BindView(R.id.compareDamage) TextView compareDamage;
+    @BindView(R.id.compareFireRate) TextView compareFireRate;
+    @BindView(R.id.compareMagazineSize) TextView compareMagazineSize;
+    @BindView(R.id.compareReloadTime) TextView compareReloadTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +68,12 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                 currentWeaponBulletType,
                         weaponTypeA,
                         weaponTypeB,
-                        compareDPS)
+                        compareDPS,
+                        compareDamage,
+                        compareFireRate,
+                        compareMagazineSize,
+                        compareReloadTime
+                        )
                 );
 
         weaponTypeB.setOnItemSelectedListener(new WeaponTypeListener(
@@ -77,7 +86,12 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                         potentialWeaponBulletType,
                         weaponTypeA,
                         weaponTypeB,
-                        compareDPS)
+                        compareDPS,
+                        compareDamage,
+                        compareFireRate,
+                        compareMagazineSize,
+                        compareReloadTime
+                )
         );
 
     }

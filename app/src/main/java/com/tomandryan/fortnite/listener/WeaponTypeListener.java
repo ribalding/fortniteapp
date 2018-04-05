@@ -36,6 +36,10 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
     private Spinner weaponSelectionA;
     private Spinner weaponSelectionB;
     private TextView compareDPS;
+    private TextView compareDamage;
+    private TextView compareFireRate;
+    private TextView compareMagazineSize;
+    private TextView compareReloadTime;
 
     public WeaponTypeListener(TextView currentWeaponDPS,
                               TextView currentWeaponDamage,
@@ -46,7 +50,11 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
                               TextView currentWeaponBulletType,
                               Spinner weaponSelectionA,
                               Spinner weaponSelectionB,
-                              TextView compareDPS
+                              TextView compareDPS,
+                              TextView compareDamage,
+                              TextView compareFireRate,
+                              TextView compareMagazineSize,
+                              TextView compareReloadTime
                               ){
         this.currentWeaponDPS = currentWeaponDPS;
         this.currentWeaponDamage = currentWeaponDamage;
@@ -58,14 +66,17 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
         this.weaponSelectionA = weaponSelectionA;
         this.weaponSelectionB = weaponSelectionB;
         this.compareDPS = compareDPS;
-
+        this.compareDamage = compareDamage;
+        this.compareFireRate = compareFireRate;
+        this.compareMagazineSize = compareMagazineSize;
+        this.compareReloadTime = compareReloadTime;
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         Weapon stats = Weapons.getWeaponStats(i);
         this.setWeaponStats(stats);
-        updateComparison(weaponSelectionA, weaponSelectionB, compareDPS);
+        updateComparison(weaponSelectionA, weaponSelectionB, compareDPS, compareDamage, compareFireRate, compareMagazineSize, compareReloadTime);
     }
 
     @Override
@@ -87,11 +98,24 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
         this.currentWeaponBulletType.setText(w.getBulletType());
     }
 
-    private static void updateComparison(Spinner a, Spinner b, TextView compareDPS){
+    private static void updateComparison(Spinner a, Spinner b, TextView compareDPS, TextView compareDamage, TextView compareFireRate, TextView compareMagazineSize, TextView compareReloadTime){
         Weapon selectA = Weapons.getWeaponStats(a.getSelectedItemPosition());
         Weapon selectB = Weapons.getWeaponStats(b.getSelectedItemPosition());
+
         Integer dps = Weapons.compareWeaponStats(selectA.getDps(), selectB.getDps());
-        compareDPS.setText(dps.toString());
+        compareDPS.setText(dps.toString().concat("%"));
+
+        Integer damage = Weapons.compareWeaponStats(selectA.getDamage(), selectB.getDamage());
+        compareDamage.setText(damage.toString().concat("%"));
+
+        Integer fireRate = Weapons.compareWeaponStats(selectA.getFireRate(), selectB.getFireRate());
+        compareFireRate.setText(fireRate.toString().concat("%"));
+
+        Integer magazineSize = Weapons.compareWeaponStats(selectA.getMagazineSize(), selectB.getMagazineSize());
+        compareMagazineSize.setText(magazineSize.toString().concat("%"));
+
+        Integer reloadTime = Weapons.compareWeaponStats(selectA.getReloadTime(), selectB.getReloadTime());
+        compareReloadTime.setText(reloadTime.toString().concat("%"));
     }
 }
 
