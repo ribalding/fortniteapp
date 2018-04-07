@@ -17,10 +17,10 @@ public class Weapon {
     private double reloadTime;
     private String rarity;
     private String bulletType;
-    public Drawable image;
+    public int imageLocation;
 
 
-    public Weapon(String gunName, double dps, int damage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType, Drawable image) {
+    public Weapon(String gunName, double dps, int damage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType, int imageLocation) {
         this.gunName = gunName;
         this.dps = dps;
         this.damage = damage;
@@ -29,7 +29,7 @@ public class Weapon {
         this.reloadTime = reloadTime;
         this.rarity = rarity;
         this.bulletType = bulletType;
-        this.image = image;
+        this.imageLocation = imageLocation;
     }
 
     public String getGunName() {
@@ -96,12 +96,12 @@ public class Weapon {
         this.bulletType = bulletType;
     }
 
-    public Drawable getImage() {
-        return image;
+    public int getImageLocation() {
+        return imageLocation;
     }
 
-    public void setImage(Drawable image) {
-        this.image = image;
+    public void setImageLocation(int image) {
+        this.imageLocation = image;
     }
 
 }

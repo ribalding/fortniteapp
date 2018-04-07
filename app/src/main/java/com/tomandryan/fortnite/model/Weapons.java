@@ -27,15 +27,15 @@ public class Weapons {
             "Pump Shotgun (Grey)", "Pump Shotgun (Green)", "Tactical Shotgun (Blue)", "Tactical Shotgun (Purple)", "Tactical Shotgun (Green)",
             "Suppressed Submachine Gun (Grey)", "Suppressed Submachine Gun (Green)", "Suppressed Submachine Gun (Blue)", "Tactical Submachine Gun (Green)", "Tactical Submachine Gun (Blue)", "Tactical Submachine Gun (Purple");
 
-    public static final List<Weapon> ALL_WEAPONS = Arrays.asList(
-            new Weapon("Assault Rifle (Grey)",165,30,5.5,30,2.3,"Common", "Medium", ContextCompat.getDrawable(this.image, R.drawable.assault_rifle_green_image)),
-            new Weapon("Assault Rifle (Green)",170.5,31,5.5,30,2.2,"Uncommon", "Medium", "assault_rifle_green_image"),
-            new Weapon("Assault Rifle (Blue)",181.5,33,5.5,30,2.2,"Rare", "Medium", "assault_rifle_green_image"),
-            new Weapon("Assault Rifle (Purple)",192.5,35,5.5,30,2.1,"Epic", "Medium","assault_rifle_green_image"),
-            new Weapon("Assault Rifle (Gold)",198,36,5.5,30,2.1,"Legendary", "Medium", "assault_rifle_green_image"),
-            new Weapon("Burst Assault Rifle (Grey)",109.62,27,4.06,30,2.9,"Common", "Medium","assault_rifle_green_image"),
-            new Weapon("Burst Assault Rifle (Green)",117.74,29,4.06,30,2.7,"Uncommon", "Medium","assault_rifle_green_image"),
-            new Weapon("Burst Assault Rifle (Blue)",121.8,30,4.06,30,2.5,"Rare", "Medium","assault_rifle_green_image"),
+    private static final List<Weapon> ALL_WEAPONS = Arrays.asList(
+            new Weapon("Assault Rifle (Grey)",165,30,5.5,30,2.3,"Common", "Medium", R.drawable.assault_rifle_grey_image),
+            new Weapon("Assault Rifle (Green)",170.5,31,5.5,30,2.2,"Uncommon", "Medium", R.drawable.assault_rifle_green_image),
+            new Weapon("Assault Rifle (Blue)",181.5,33,5.5,30,2.2,"Rare", "Medium", R.drawable.assault_rifle_blue_image),
+            new Weapon("Assault Rifle (Purple)",192.5,35,5.5,30,2.1,"Epic", "Medium",R.drawable.assault_rifle_purple_image),
+            new Weapon("Assault Rifle (Gold)",198,36,5.5,30,2.1,"Legendary", "Medium", R.drawable.assault_rifle_gold_image),
+            new Weapon("Burst Assault Rifle (Grey)",109.62,27,4.06,30,2.9,"Common", "Medium",R.drawable.burst_assault_rifle_grey_image),
+            new Weapon("Burst Assault Rifle (Green)",117.74,29,4.06,30,2.7,"Uncommon", "Medium",R.drawable.burst_assault_rifle_green_image),
+            new Weapon("Burst Assault Rifle (Blue)",121.8,30,4.06,30,2.5,"Rare", "Medium",R.drawable.burst_assault_rifle_blue_image),
             new Weapon("Scoped Assault Rifle (Blue)",80.5,23,3.5,20,2.3,"Rare", "Medium","assault_rifle_green_image"),
             new Weapon("Scoped Assault Rifle (Purple)",84,24,3.5,20,2.3,"Epic", "Medium","assault_rifle_green_image"),
             new Weapon("Bolt Action Sniper Rifle (Blue)",34.65,105,.33,1,3.0,"Rare", "Heavy","assault_rifle_green_image"),

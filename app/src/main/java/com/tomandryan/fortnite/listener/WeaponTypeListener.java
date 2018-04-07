@@ -91,7 +91,7 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
      * Set weapon stat display text views with currently selected weapon stats
      */
     private void setWeaponStats (Weapon w) {
-        this.currentImage.setImageDrawable(w.getImage());
+        this.currentImage.setBackgroundResource(R.drawable.assault_rifle_gold_image);
         this.currentWeaponDPS.setText(Double.toString(w.getDps()));
         /* do we need to send over weapon name as well? */
         this.currentWeaponDamage.setText(Integer.toString(w.getDamage()));
