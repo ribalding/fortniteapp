@@ -1,5 +1,8 @@
 package com.tomandryan.fortnite.model;
 
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+
 /**
  * Created by Tom on 3/19/2018.
  */
@@ -14,8 +17,10 @@ public class Weapon {
     private double reloadTime;
     private String rarity;
     private String bulletType;
+    public Drawable image;
 
-    public Weapon(String gunName, double dps, int damage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType) {
+
+    public Weapon(String gunName, double dps, int damage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType, Drawable image) {
         this.gunName = gunName;
         this.dps = dps;
         this.damage = damage;
@@ -24,6 +29,7 @@ public class Weapon {
         this.reloadTime = reloadTime;
         this.rarity = rarity;
         this.bulletType = bulletType;
+        this.image = image;
     }
 
     public String getGunName() {
@@ -90,7 +96,13 @@ public class Weapon {
         this.bulletType = bulletType;
     }
 
+    public Drawable getImage() {
+        return image;
+    }
 
+    public void setImage(Drawable image) {
+        this.image = image;
+    }
 
 }
 

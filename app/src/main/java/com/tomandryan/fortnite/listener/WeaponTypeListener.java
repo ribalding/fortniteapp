@@ -3,6 +3,7 @@ package com.tomandryan.fortnite.listener;
 import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,7 +15,6 @@ import com.tomandryan.fortnite.model.Weapons;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 
 
@@ -26,6 +26,7 @@ import butterknife.BindView;
  */
 
 public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
+    private ImageView currentImage;
     private TextView currentWeaponDPS;
     private TextView currentWeaponDamage;
     private TextView currentWeaponFireRate;
@@ -41,7 +42,8 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
     private TextView compareMagazineSize;
     private TextView compareReloadTime;
 
-    public WeaponTypeListener(TextView currentWeaponDPS,
+    public WeaponTypeListener(ImageView currentImage,
+                              TextView currentWeaponDPS,
                               TextView currentWeaponDamage,
                               TextView currentWeaponFireRate,
                               TextView currentWeaponMagazineSize,
@@ -56,6 +58,7 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
                               TextView compareMagazineSize,
                               TextView compareReloadTime
                               ){
+        this.currentImage = currentImage;
         this.currentWeaponDPS = currentWeaponDPS;
         this.currentWeaponDamage = currentWeaponDamage;
         this.currentWeaponFireRate = currentWeaponFireRate;
@@ -88,6 +91,7 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
      * Set weapon stat display text views with currently selected weapon stats
      */
     private void setWeaponStats (Weapon w) {
+        this.currentImage.setImageDrawable(w.getImage());
         this.currentWeaponDPS.setText(Double.toString(w.getDps()));
         /* do we need to send over weapon name as well? */
         this.currentWeaponDamage.setText(Integer.toString(w.getDamage()));
