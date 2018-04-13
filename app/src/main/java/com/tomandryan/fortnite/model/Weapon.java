@@ -12,6 +12,7 @@ public class Weapon {
     private String gunName;
     private double dps;
     private int damage;
+    private double headshotDamage;
     private double fireRate;
     private int magazineSize;
     private double reloadTime;
@@ -20,10 +21,11 @@ public class Weapon {
     private int imageLocation;
 
 
-    public Weapon(String gunName, double dps, int damage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType, int imageLocation) {
+    public Weapon(String gunName, double dps, int damage, double headshotDamage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType, int imageLocation) {
         this.gunName = gunName;
         this.dps = dps;
         this.damage = damage;
+        this.headshotDamage = headshotDamage;
         this.fireRate = fireRate;
         this.magazineSize = magazineSize;
         this.reloadTime = reloadTime;
@@ -54,6 +56,14 @@ public class Weapon {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public double getHeadshotDamage() {
+        return headshotDamage;
+    }
+
+    public void setHeadshotDamage(double headshotDamage) {
+        this.headshotDamage = headshotDamage;
     }
 
     public double getFireRate() {

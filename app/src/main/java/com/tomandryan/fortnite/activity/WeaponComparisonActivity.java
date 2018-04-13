@@ -26,6 +26,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.currentImage) ImageView currentImage;
     @BindView(R.id.currentDPS) TextView currentDPS;
     @BindView(R.id.currentDamage) TextView currentDamage;
+    @BindView(R.id.currentHeadshotDamage) TextView currentHeadshotDamage;
     @BindView(R.id.currentFireRate) TextView currentFireRate;
     @BindView(R.id.currentMagazineSize) TextView currentMagazineSize;
     @BindView(R.id.currentReloadTime) TextView currentReloadTime;
@@ -34,6 +35,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialImage) ImageView potentialImage;
     @BindView(R.id.potentialDPS) TextView potentialDPS;
     @BindView(R.id.potentialDamage) TextView potentialDamage;
+    @BindView(R.id.potentialHeadshotDamage) TextView potentialHeadshotDamage;
     @BindView(R.id.potentialFireRate) TextView potentialFireRate;
     @BindView(R.id.potentialMagazineSize) TextView potentialMagazineSize;
     @BindView(R.id.potentialReloadTime) TextView potentialReloadTime;
@@ -41,6 +43,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
     @BindView(R.id.potentialBulletType) TextView potentialBulletType;
     @BindView(R.id.compareDPS) TextView compareDPS;
     @BindView(R.id.compareDamage) TextView compareDamage;
+    @BindView(R.id.compareHeadshotDamage) TextView compareHeadshotDamage;
     @BindView(R.id.compareFireRate) TextView compareFireRate;
     @BindView(R.id.compareMagazineSize) TextView compareMagazineSize;
     @BindView(R.id.compareReloadTime) TextView compareReloadTime;
@@ -65,6 +68,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                 currentImage,
                 currentDPS,
                 currentDamage,
+                currentHeadshotDamage,
                 currentFireRate,
                 currentMagazineSize,
                 currentReloadTime,
@@ -74,6 +78,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                         weaponTypeB,
                         compareDPS,
                         compareDamage,
+                        compareHeadshotDamage,
                         compareFireRate,
                         compareMagazineSize,
                         compareReloadTime
@@ -84,6 +89,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                         potentialImage,
                         potentialDPS,
                         potentialDamage,
+                        potentialHeadshotDamage,
                         potentialFireRate,
                         potentialMagazineSize,
                         potentialReloadTime,
@@ -93,6 +99,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
                         weaponTypeB,
                         compareDPS,
                         compareDamage,
+                        compareHeadshotDamage,
                         compareFireRate,
                         compareMagazineSize,
                         compareReloadTime
