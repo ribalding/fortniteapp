@@ -17,7 +17,7 @@ public class Weapon {
     private double reloadTime;
     private String rarity;
     private String bulletType;
-    public int imageLocation;
+    private int imageLocation;
 
 
     public Weapon(String gunName, double dps, int damage, double fireRate, int magazineSize, double reloadTime, String rarity, String bulletType, int imageLocation) {

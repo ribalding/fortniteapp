@@ -56,7 +56,7 @@ public class WeaponComparisonActivity extends AppCompatActivity {
 
     private void setupStatsDisplay(){
         // Create adapter to display weapon types in weapon type spinners
-        ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.ALL_WEAPON_TYPES);
+        ArrayAdapter<String> weaponTypeAdapter = new ArrayAdapter<String>(WeaponComparisonActivity.this, android.R.layout.simple_spinner_dropdown_item, Weapons.getWeaponNameList());
         weaponTypeA.setAdapter(weaponTypeAdapter);
         weaponTypeB.setAdapter(weaponTypeAdapter);
 

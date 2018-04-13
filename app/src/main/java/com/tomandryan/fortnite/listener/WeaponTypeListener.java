@@ -1,6 +1,7 @@
 package com.tomandryan.fortnite.listener;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -102,26 +103,33 @@ public class WeaponTypeListener implements AdapterView.OnItemSelectedListener {
         this.currentWeaponBulletType.setText(w.getBulletType());
     }
 
-    
+
     private static void updateComparison(Spinner a, Spinner b, TextView compareDPS, TextView compareDamage, TextView compareFireRate, TextView compareMagazineSize, TextView compareReloadTime){
         Weapon selectA = Weapons.getWeaponStats(a.getSelectedItemPosition());
         Weapon selectB = Weapons.getWeaponStats(b.getSelectedItemPosition());
 
         Integer dps = Weapons.compareWeaponStats(selectA.getDps(), selectB.getDps());
         compareDPS.setText(dps.toString().concat("%"));
+        int dpsPositive = Weapons.percentagePositive(dps);
+        compareDPS.setTextColor(dpsPositive);
+
 
         Integer damage = Weapons.compareWeaponStats(selectA.getDamage(), selectB.getDamage());
         compareDamage.setText(damage.toString().concat("%"));
 
+
         Integer fireRate = Weapons.compareWeaponStats(selectA.getFireRate(), selectB.getFireRate());
         compareFireRate.setText(fireRate.toString().concat("%"));
+
 
         Integer magazineSize = Weapons.compareWeaponStats(selectA.getMagazineSize(), selectB.getMagazineSize());
         compareMagazineSize.setText(magazineSize.toString().concat("%"));
 
+
         Integer reloadTime = Weapons.compareWeaponStats(selectA.getReloadTime(), selectB.getReloadTime());
         compareReloadTime.setText(reloadTime.toString().concat("%"));
     }
+
 }
 
 
