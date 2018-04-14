@@ -100,7 +100,7 @@ public class Weapons {
         return compareWeaponStats(d, d2);
     }
 
-  public static int percentagePositive(int roundedDifferenceBetweenStats) {
+    public static int percentagePositive(int roundedDifferenceBetweenStats) {
         if(roundedDifferenceBetweenStats > 0) {
             return Color.GREEN;
         }else if(roundedDifferenceBetweenStats == 0) {
