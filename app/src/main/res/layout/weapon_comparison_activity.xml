@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tomandryan.fortnite.activity.WeaponComparisonActivity">
+
+    <Spinner
+        android:id="@+id/weaponTypeA"
+        android:layout_width="206dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="239dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/weaponComparisonToolTitle"
+        android:layout_width="wrap_content"
+        android:textSize="26sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/fortnite_weapon_comparison_tool"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/weaponTypeB"
+        android:layout_width="205dp"
+        android:layout_height="37dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/weaponTypeA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/weaponSelectionA"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:layout_alignEnd="@+id/weaponTypeA"
+        android:layout_centerVertical="true"
+        android:text="@string/current_weapon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weaponTypeA"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_alignRight="@+id/weaponTypeA" />
+
+    <TextView
+        android:id="@+id/currentDPS"
+        android:layout_width="75dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/weaponSelectionA"
+        android:layout_below="@+id/currentHeadshotDamage"
+        android:layout_marginStart="-3dp"
+        android:text="@string/dps"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weaponSelectionA"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentDamage"
+        android:layout_width="81dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/currentDPS"
+        android:layout_alignTop="@+id/damageLabel1"
+        android:text="@string/damage"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentDPS" />
+
+    <TextView
+        android:id="@+id/currentFireRate"
+        android:layout_width="99dp"
+        android:layout_height="28dp"
+        android:layout_above="@+id/currentMagazineSize"
+        android:layout_alignStart="@+id/currentMagazineSize"
+        android:text="@string/fire_rate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentMagazineSize"
+        android:layout_width="81dp"
+        android:layout_height="28dp"
+        android:layout_above="@+id/currentReloadTime"
+        android:layout_alignStart="@+id/currentDPS"
+        android:text="@string/magazine_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentFireRate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentReloadTime"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/currentDPS"
+        android:layout_marginBottom="98dp"
+        android:layout_marginStart="2dp"
+        android:text="@string/reload_time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentMagazineSize"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentRarity"
+        android:layout_width="74dp"
+        android:layout_height="21dp"
+        android:layout_alignEnd="@+id/currentDPS"
+        android:layout_alignTop="@+id/rarityLabel1"
+        android:text="@string/weapon_rarity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentReloadTime"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentBulletType"
+        android:layout_width="73dp"
+        android:layout_height="31dp"
+        android:layout_alignEnd="@+id/currentDPS"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="31dp"
+        android:text="@string/bullet_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentRarity"
+        app:layout_constraintVertical_bias="0.128" />
+
+    <TextView
+        android:id="@+id/currentHeadshotDamage"
+        android:layout_width="81dp"
+        android:layout_height="31dp"
+        android:layout_alignStart="@+id/currentDamage"
+        android:layout_below="@+id/currentDamage"
+        android:text="@string/headshot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentBulletType"
+        app:layout_constraintVertical_bias="0.128" />
+
+
+    <TextView
+        android:id="@+id/weaponSelectionB"
+        android:layout_width="82dp"
+        android:layout_height="38dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/reloadTimeLabel2"
+        android:text="@string/potential_weapon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weaponTypeB"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_toLeftOf="@+id/reloadTimeLabel2" />
+
+    <TextView
+        android:id="@+id/potentialDPS"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/potentialDamage"
+        android:layout_alignTop="@+id/currentDPS"
+        android:layout_marginTop="-2dp"
+        android:gravity="center"
+        android:text="@string/dps"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="@+id/compareDPS"
+        app:layout_constraintLeft_toLeftOf="@+id/compareDPS"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/compareDPS"
+        app:layout_constraintTop_toBottomOf="@+id/weaponSelectionB"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/potentialDamage"
+        android:layout_width="65dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/potentialHeadshotDamage"
+        android:layout_alignTop="@+id/currentDamage"
+        android:gravity="center"
+        android:text="@string/damage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/potentialDPS" />
+
+    <TextView
+        android:id="@+id/potentialFireRate"
+        android:layout_width="66dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/potentialDPS"
+        android:layout_alignTop="@+id/currentFireRate"
+        android:gravity="center"
+        android:text="@string/fire_rate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/potentialMagazineSize"
+        android:layout_width="67dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/potentialDPS"
+        android:layout_below="@+id/currentFireRate"
+        android:gravity="center"
+        android:text="@string/magazine_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/potentialReloadTime"
+        android:layout_width="66dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/potentialDPS"
+        android:layout_below="@+id/currentMagazineSize"
+        android:gravity="center"
+        android:text="@string/reload_time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/potentialRarity"
+        android:layout_width="75dp"
+        android:layout_height="21dp"
+        android:layout_alignStart="@+id/potentialDPS"
+        android:layout_alignTop="@+id/currentRarity"
+        android:gravity="center"
+        android:text="@string/weapon_rarity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/potentialBulletType"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/potentialDPS"
+        android:layout_alignTop="@+id/currentBulletType"
+        android:gravity="center"
+        android:text="@string/bullet_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/potentialRarity"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/potentialHeadshotDamage"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/currentDPS"
+        android:layout_toEndOf="@+id/compareDPS"
+        android:gravity="center"
+        android:text="@string/headshot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/potentialBulletType"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/compareDPS"
+        android:layout_width="38dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/compareDamage"
+        android:layout_alignTop="@+id/currentDPS"
+        android:text="@string/dps_comparison"
+        app:layout_constraintEnd_toStartOf="@+id/potentialDPS"
+        app:layout_constraintHorizontal_bias="@+id/currentDPS"
+        app:layout_constraintLeft_toLeftOf="@+id/currentDPS"
+        app:layout_constraintStart_toEndOf="@+id/currentDPS"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignLeft="@+id/compareDamage" />
+
+    <TextView
+        android:id="@+id/compareDamage"
+        android:layout_width="38dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/currentDamage"
+        android:layout_toEndOf="@+id/currentDPS"
+        android:text="@string/damage_comparison"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/potentialDamage"
+        app:layout_constraintHorizontal_bias="@+id/currentDamage"
+        app:layout_constraintLeft_toLeftOf="@+id/currentDamage"
+        app:layout_constraintStart_toEndOf="@+id/currentDamage"
+        app:layout_constraintTop_toBottomOf="@+id/compareDPS"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/compareFireRate"
+        android:layout_width="38dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/currentFireRate"
+        android:layout_toEndOf="@+id/currentDPS"
+        android:text="@string/fire_rate_comparison"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compareDamage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/compareMagazineSize"
+        android:layout_width="38dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/compareDPS"
+        android:layout_below="@+id/currentFireRate"
+        android:text="@string/magazine_size_comparison"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compareFireRate"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_alignLeft="@+id/compareDPS" />
+
+    <TextView
+        android:id="@+id/compareReloadTime"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/currentReloadTime"
+        android:layout_toEndOf="@+id/currentDPS"
+        android:text="@string/reload_time_comparison"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compareMagazineSize"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/compareHeadshotDamage"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/currentHeadshotDamage"
+        android:layout_toEndOf="@+id/currentDPS"
+        android:text="@string/headshot_damage_comparison"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compareMagazineSize"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/dpsLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/currentDPS"
+        android:text="@string/dps" />
+
+    <TextView
+        android:id="@+id/damageLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="242dp"
+        android:text="@string/damage" />
+
+    <TextView
+        android:id="@+id/headshotdamageLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/currentDamage"
+        android:text="@string/headshot_damage" />
+
+
+    <TextView
+        android:id="@+id/fireRateLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/currentFireRate"
+        android:text="@string/fire_rate" />
+
+    <TextView
+        android:id="@+id/reloadTimeLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/currentReloadTime"
+        android:text="@string/reload_time" />
+
+    <TextView
+        android:id="@+id/magazineLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/currentFireRate"
+        android:text="@string/magazine_size" />
+
+    <TextView
+        android:id="@+id/rarityLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="70dp"
+        android:text="@string/rarity" />
+
+    <TextView
+        android:id="@+id/bulletTypeLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/currentBulletType"
+        android:text="@string/bullet_type" />
+
+    <TextView
+        android:id="@+id/dpsLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentDPS"
+        android:text="@string/dps" />
+
+    <TextView
+        android:id="@+id/damageLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentDamage"
+        android:text="@string/damage" />
+
+    <TextView
+        android:id="@+id/fireRateLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentFireRate"
+        android:text="@string/fire_rate" />
+
+    <TextView
+        android:id="@+id/headshotdamageLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentHeadshotDamage"
+        android:text="@string/headshot_damage" />
+
+    <TextView
+        android:id="@+id/magazineLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/currentFireRate"
+        android:text="@string/magazine_size" />
+
+    <TextView
+        android:id="@+id/reloadTimeLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentReloadTime"
+        android:text="@string/reload_time" />
+
+    <TextView
+        android:id="@+id/RarityLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/rarityLabel1"
+        android:text="@string/rarity" />
+
+    <TextView
+        android:id="@+id/BulletTypeLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentBulletType"
+        android:text="@string/bullet_type" />
+
+
+    <ImageView
+        android:id="@+id/potentialImage"
+        android:layout_width="173dp"
+        android:layout_height="172dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/currentImage"
+        android:layout_marginEnd="11dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="11dp" />
+
+    <ImageView
+        android:id="@+id/currentImage"
+        android:layout_width="173dp"
+        android:layout_height="172dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="47dp"
+        android:layout_toStartOf="@+id/compareDPS"
+        android:layout_toLeftOf="@+id/compareDPS" />
+</RelativeLayout>

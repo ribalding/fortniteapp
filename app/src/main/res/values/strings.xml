@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Fortnite</string>
+    <string name="fire_rate">Fire Rate</string>
+    <string name="magazine_size">Magazine Size</string>
+    <string name="damage">Damage</string>
+    <string name="dps">DPS</string>
+    <string name="potential_weapon">Potential Weapon</string>
+    <string name="headshot">Headshot</string>
+    <string name="bullet_type">Bullet Type</string>
+    <string name="weapon_rarity">Weapon Rarity</string>
+    <string name="reload_time">Reload Time</string>
+    <string name="current_weapon">Current Weapon</string>
+    <string name="fortnite_weapon_comparison_tool">Fortnite Weapon Comparison Tool</string>
+    <string name="dps_comparison">DPS Comparison</string>
+    <string name="damage_comparison">Damage Comparison</string>
+    <string name="fire_rate_comparison">Fire Rate Comparison</string>
+    <string name="magazine_size_comparison">Magazine Size Comparison</string>
+    <string name="reload_time_comparison">Reload Time Comparison</string>
+    <string name="headshot_damage_comparison">Headshot Damage Comparison</string>
+    <string name="headshot_damage">Headshot Damage</string>
+    <string name="rarity">Rarity</string>
 </resources>
